@@ -17,12 +17,37 @@ const ul = document.querySelector(".gallery")
 
 const img = images.
 map((el) => 
-`<li><img class="image" url="${el.url}" alt="${el.alt}"></li>`
+`<li class="item"><img class="image" src="${el.url}" alt="${el.alt}"></li>`
 )
 .join("")
 
-console.log(img);
 
 ul.insertAdjacentHTML("afterbegin", img);
 
-console.log(ul)
+const style = document.createElement('style');
+
+style.innerHTML = `
+.gallery {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.item {
+  margin: 5px;
+  border: 1px solid #ccc;
+  width: 180px;
+
+}
+.item:hover {
+  border: 1px solid #777;
+}
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+`
+document.head.appendChild(style);
