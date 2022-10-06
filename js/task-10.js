@@ -20,8 +20,6 @@ buttonCreate.addEventListener("click", createBoxes);
 
 buttonDestroy.addEventListener("click", destroyBoxes);
 
-let pixels = 30
-
 function createBoxes() {
 
   for (let i = 0; i < amount; i++) {
@@ -30,7 +28,8 @@ function createBoxes() {
       return;
     }
     let a = 0;
-    pixels = pixels + (i * 10);
+    let pixels = 0
+    pixels = 30 + (i * 10);
     a = document.createElement("div");
     divBoxes.append(a);
     a.style.backgroundColor = getRandomHexColor();
